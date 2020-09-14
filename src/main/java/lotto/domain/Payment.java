@@ -5,12 +5,16 @@ public class Payment {
     public final static int TICKET_PRICE = 1000;
     private int totalAmount;
 
-    public Payment(int amount) {
-        validateAmount(amount);
+    private Payment(int amount) {
         this.totalAmount = amount;
     }
 
-    private void validateAmount(int amount) {
+    public static Payment of(int amount) {
+        validateAmount(amount);
+        return new Payment(amount);
+    }
+
+    private static void validateAmount(int amount) {
         if (amount < TICKET_PRICE) {
             throw new IllegalArgumentException("금액이 부족합니다.");
         }

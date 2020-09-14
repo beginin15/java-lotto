@@ -30,7 +30,7 @@ public class LottoMachine {
     private static Payment howMuch() {
         Payment payment = null;
         try {
-            payment = new Payment(InputView.howMuch());
+            payment = Payment.of(InputView.howMuch());
         } catch (IllegalArgumentException  e) {
             System.out.println(e.getMessage());
             return howMuch();
