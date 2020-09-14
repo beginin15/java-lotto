@@ -8,6 +8,8 @@ import java.util.List;
 
 public class LottoMachine {
 
+    private LottoMachine() {}
+
     public static void main(String[] args) {
         Payment payment = howMuch();
         LottoBundle bundle = new LottoBundle();
